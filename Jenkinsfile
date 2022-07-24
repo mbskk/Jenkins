@@ -12,6 +12,8 @@ pipeline{
         }
         stage("Maven Build"){
             steps{
+                
+                sh "def pomfilepath= /opt/apache-maven-3.0.5"
                 sh "mvn clean package"
                 sh "mv target/*.war target/myweb.war"
             }
